@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     int burst;
 
     in = fopen(argv[1],"r");
-    
+
     while (fgets(task,SIZE,in) != NULL) {
         temp = strdup(task);
         name = strsep(&temp,",");
@@ -36,7 +36,11 @@ int main(int argc, char *argv[])
 
         // add the task to the scheduler's list of tasks
         add(name,priority,burst);
-
+        g_fcfsAWTCounter += 1;
+        g_sjfAWTCounter += 1;
+        g_rrAWTCounter += 1;
+        g_pryAWTCounter += 1;
+        g_pryRRAWTCounter += 1;
         free(temp);
     }
 

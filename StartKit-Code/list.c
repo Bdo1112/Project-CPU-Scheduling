@@ -9,6 +9,11 @@
 #include "list.h"
 #include "task.h"
 
+int g_fcfsAWTCounter = 0;
+int g_sjfAWTCounter = 0;
+int g_rrAWTCounter = 0;
+int g_pryAWTCounter = 0;
+int g_pryRRAWTCounter = 0;
 
 // add a new task to the list of tasks
 void insert(struct node **head, Task *newTask) {
@@ -19,6 +24,7 @@ void insert(struct node **head, Task *newTask) {
     newNode->next = *head;
     *head = newNode;
 }
+
 
 // delete the selected task from the list
 void delete(struct node **head, Task *task) {
@@ -53,3 +59,4 @@ void traverse(struct node *head) {
         temp = temp->next;
     }
 }
+

@@ -11,6 +11,8 @@ typedef struct task {
     int tid;
     int priority;
     int burst;
+    int burstBeg;
+    int burstEnd;
 } Task;
 
 #endif
